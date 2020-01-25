@@ -13,7 +13,8 @@
 		30E133CE23DB5F23005590CA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30E133CC23DB5F23005590CA /* Main.storyboard */; };
 		30E133D023DB5F25005590CA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 30E133CF23DB5F25005590CA /* Assets.xcassets */; };
 		30E133D323DB5F25005590CA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30E133D123DB5F25005590CA /* LaunchScreen.storyboard */; };
-		30E133DB23DB68FD005590CA /* WeatherAgent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E133DA23DB68FD005590CA /* WeatherAgent.swift */; };
+		30E133E223DB7879005590CA /* WeatherAgent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E133E123DB7879005590CA /* WeatherAgent.swift */; };
+		30E133E423DB788F005590CA /* WInfoInstance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E133E323DB788F005590CA /* WInfoInstance.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,7 +26,8 @@
 		30E133CF23DB5F25005590CA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		30E133D223DB5F25005590CA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		30E133D423DB5F25005590CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		30E133DA23DB68FD005590CA /* WeatherAgent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherAgent.swift; sourceTree = "<group>"; };
+		30E133E123DB7879005590CA /* WeatherAgent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherAgent.swift; sourceTree = "<group>"; };
+		30E133E323DB788F005590CA /* WInfoInstance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WInfoInstance.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,7 +75,8 @@
 		30E133DC23DB6905005590CA /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				30E133DA23DB68FD005590CA /* WeatherAgent.swift */,
+				30E133E123DB7879005590CA /* WeatherAgent.swift */,
+				30E133E323DB788F005590CA /* WInfoInstance.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -149,8 +152,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				30E133DB23DB68FD005590CA /* WeatherAgent.swift in Sources */,
+				30E133E423DB788F005590CA /* WInfoInstance.swift in Sources */,
 				30E133CB23DB5F23005590CA /* ViewController.swift in Sources */,
+				30E133E223DB7879005590CA /* WeatherAgent.swift in Sources */,
 				30E133C723DB5F23005590CA /* AppDelegate.swift in Sources */,
 				30E133C923DB5F23005590CA /* SceneDelegate.swift in Sources */,
 			);
@@ -299,6 +303,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2633WLSDWK;
 				INFOPLIST_FILE = WeatherApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -317,6 +322,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2633WLSDWK;
 				INFOPLIST_FILE = WeatherApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
