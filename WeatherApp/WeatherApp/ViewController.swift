@@ -2,6 +2,8 @@ import UIKit
 
 class ViewController: UIViewController
 {
+    @IBOutlet weak var backgroundImageView: UIImageView!
+    @IBOutlet weak var weatherIcon: UIImageView!
     @IBOutlet weak var placeLabel: UILabel!
     @IBOutlet weak var tempLabel: UILabel!
     @IBOutlet weak var searchBar: UISearchBar!
@@ -13,6 +15,8 @@ class ViewController: UIViewController
         super.viewDidLoad();
         
         searchBar.delegate = self;
+        
+        backgroundImageView.image = nil; //TODO - Find suitable sketch and add background image
     }
 }
 
@@ -40,6 +44,7 @@ extension ViewController: UISearchBarDelegate
         {
             self.placeLabel.text = agent.getLocation();
             self.tempLabel.text = "\(agent.getTemp())";
+            self.weatherIcon.image = agent.getWeatherIcon();
             self.tempLabel.isHidden = false;
         }
     }
