@@ -35,6 +35,7 @@ class WeatherAgent: NSObject
         }
         
         task.resume();
+        
     }
     
     func getLocation() -> String?
@@ -61,44 +62,28 @@ class WeatherAgent: NSObject
         return temp!;
     }
     
-    func getWeatherIcon() -> UIImage
+    func getWeatherCode() -> Int
     {
-        var imageURLStr: String? = nil;
-        var image: UIImage? = nil;
-        let sign = DispatchSemaphore(value: 0);
+        var code: Int? = 0;
         
         if let current = self.json["current"]
         {
-            let imageURLsArr = current["weather_icons"] as! NSArray;
-            imageURLStr = imageURLsArr[0] as? String;
+            code = current["weather_code"]! as? Int;
         }
         
-        let url = URL(string: imageURLStr!);
-        
-        let task = URLSession.shared.dataTask(with: url!)
-        {
-            (data, response, error) in
-            image = UIImage(data: data!);
-            
-            sign.signal();
-            
-            // TODO problems with converting data into image
-        }
-        
-        task.resume();
-        
-        sign.wait();
-        
-        return image!;
+        return code!;
     }
     
-    func isErrorOccured() -> Bool
+    func isErrorOccured() -> [String:String]?
     {
-        if (self.json["error"] != nil)
+        if let error = json["error"]
         {
-            return true;
+            let errors = ["type":error["type"] as! String ,
+                          "info":error["info"] as! String];
+            
+            return errors;
         }
         
-        return false;
+        return nil;
     }
 }
