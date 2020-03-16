@@ -62,16 +62,25 @@ class WeatherAgent: NSObject
         return temp!;
     }
     
-    func getWeatherCode() -> Int
+    func getWeatherCodeAndDescription() -> (code: Int, description: String)
     {
         var code: Int? = 0;
+        var description: String? = "";
         
         if let current = self.json["current"]
         {
             code = current["weather_code"]! as? Int;
+            
+            if let descriptions = current["weather_descriptions"]
+            {
+                for tempDescription in (descriptions as? NSMutableArray)!
+                {
+                    description?.append(contentsOf: tempDescription as! String)
+                }
+            }
         }
         
-        return code!;
+        return (code!, description!);
     }
     
     func isErrorOccured() -> [String:String]?
